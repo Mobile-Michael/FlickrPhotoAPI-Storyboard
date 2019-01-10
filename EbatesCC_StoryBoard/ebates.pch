@@ -1,0 +1,24 @@
+//
+//  ebates.pch
+//  EbatesCC_StoryBoard
+//
+//  Created by Mike Mullin on 1/9/19.
+//  Copyright © 2019 EbatesInterview. All rights reserved.
+//
+
+#ifndef ebates_h
+#define ebates_h
+
+#define DEBUG_MODE 1// this will allow Logging unless in non debug
+
+
+#ifdef DEBUG_MODE
+#define LogEbates( s, ... ) NSLog( @"<%@:(%d)> %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#define ErrorEbates( s, ... ) NSLog( @"<%@:(%d)>ERROR: %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#else
+#define LogEbates( s, ... )
+#define ErrorEbates( s, ...)
+#endif
+
+
+#endif /* ebates_h */
