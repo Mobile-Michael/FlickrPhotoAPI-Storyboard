@@ -112,7 +112,7 @@
     }
     
     
-    [self reset];
+    
     NSString *urlString = @"https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=fee10de350d1f31d5fec0eaf330d2dba&format=json&nojsoncallback=true";
     
     NSURLSession *defaultSession = [NSURLSession sharedSession];
@@ -123,6 +123,7 @@
     NSURLSessionDataTask *dataTask = [defaultSession dataTaskWithRequest:urlRequest
                                                        completionHandler:^(NSData *data, NSURLResponse *response,NSError *error)
                                       {
+                                          [self reset];
                                           NSString *errorString = error.localizedDescription;
                                           if(error == nil)
                                           {
